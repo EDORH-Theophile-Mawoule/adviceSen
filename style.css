@@ -11,12 +11,14 @@
 
 body{
     background-color: white;
+    align-items: center;
+    width: 100%;
 }
 .dropdown1{
     min-width: 7em;
     position: relative;
     margin: 2em;
-    font-size: 12px;
+    font-size: 0.75rem;
 }
 .dropdown1 * {
     box-sizing: border-box;
@@ -25,7 +27,7 @@ body{
     min-width: 7em;
     position: relative;
     margin: 2em;
-    font-size: 12px;
+    font-size: 0.75rem;
 }
 .dropdown2 * {
     box-sizing: border-box;
@@ -34,8 +36,8 @@ body{
 .dropdown3{
     min-width: 7em;
     position: relative;
-    margin: 2em;
-    font-size: 12px;
+
+    font-size: 0.75rem;
 }
 .dropdown3 * {
     box-sizing: border-box;
@@ -46,14 +48,14 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 2px #00291d solid;
+    border: 0.125rem #00291d solid;
     border-radius: 0.5em;
     padding: 1em;
     cursor: pointer;
     transition: background 0.3s;
 }
 .select-clicked {
-    border: 2px #15a278 solid;
+    border: 0.125rem #15a278 solid;
     box-shadow: 0 0 0.8em #00291d;
 }
 .selected:hover {
@@ -62,9 +64,9 @@ body{
 .caret {
     width: 0;
     height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 6px solid #fff;
+    border-left: 0.313rem solid transparent;
+    border-right: 0.313rem solid transparent;
+    border-top: 0.313rem solid #fff;
     transition: 0.3s;
 }
 .caret-rotate {
@@ -74,14 +76,14 @@ body{
     list-style: none;
     padding: 0.1em 0.1em;
     background: #a8efff;
-    border: 1px rgb(0, 251, 255) solid;
+    border: 0.063rem rgb(0, 251, 255) solid;
     box-shadow:  0 0.5em 1em rgba(0,0,0,0.2);
     border-radius: 0.5em;
     position: absolute;
     top: 3em;
     left: 50%;
     width: 100%;
-    height: 120px;
+    height: 7.5 rem;
     overflow-y: auto;
     transform: translateX(-50%);
     opacity: 0;
@@ -97,7 +99,7 @@ body{
     padding: 0.7em 0.5em;
     margin: 0.3em;
     border-radius: 0.5em;
-    font-size: 12px;
+    font-size: 0.75rem;
     color: #0e0e0e;
     cursor: pointer;
 }
@@ -128,10 +130,14 @@ body{
     height: 100%;
     opacity: 0;
     pointer-events: none;
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(0.938rem);
     transition: 0.2s ease;
 }
 .show-popup .blur-bg-overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+.download.show-download {
     opacity: 1;
     pointer-events: auto;
 }
@@ -139,17 +145,17 @@ body{
     position: fixed;
     top: 57%;
     left: 50%;
-    height: 424px;
-    max-width: 720px;
+    height: 26.5rem;
+    max-width: 71.25rem;
     width: 100%;
     overflow-y: auto;
     opacity: 0;
     pointer-events: none;
     background: #effffc;
-    border: 2px solid #002f14;
+    border: 0.125rem solid #002f14;
     transform: translate(-50%, -100%);
     z-index: 5;
-    border-radius: 20px;
+    border-radius: 1.25rem;
 
 }
 .form-popup::-webkit-scrollbar {
@@ -165,8 +171,8 @@ body{
 
 .form-popup .close-btn{
     position: absolute;
-    top: 12px;
-    right: 12px;
+    top: 10.125rem;
+    right: 10.125rem;
     color: #878484;
     cursor: pointer;
 }
@@ -175,11 +181,11 @@ body{
 
 }
 .form-box .form-details {
-    max-width: 330px;
-    padding: 0 20px;
+    max-width: 31.875rem;
+    padding: 0 1.25rem;
     display: flex;
     color: #ffffff;
-    border-radius: 20px;
+    border-radius: 1.25rem;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -200,41 +206,41 @@ body{
 
 .form-box h2 {
     text-align: center;
-    margin-bottom: 32px;
+    margin-bottom: 30.125rem;
 }
 .form-box .form-content {
     width: 100%;
-    padding: 35px;
-    border-radius: 20px;
+    padding: 2.188rem;
+    border-radius: 1.25rem;
 }
 
 form .input-field {
-    height: 50px;
+    height: 3.125rem;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 1.25rem;
     position: relative;
 }
 form .input-field input {
     height: 100%;
     width: 100%;
-    padding: 0 15px;
-    border: 1PX solid #717171;
+    padding: 0 0.938rem;
+    border: 0.063rem solid #717171;
     font-size: 0.95rem;
     outline: none;
-    border-radius: 3px;
+    border-radius: 0.188rem;
 }
 form .input-field:focus {
     border-color: #00bcd4;
 
 }
 .input-field input:is(:focus, :valid) {
-    padding: 16px 15px 0;
+    padding: 1rem 0.938rem 0;
 
 }
 form .input-field label {
     position: absolute;
     top: 50%;
-    left: 15px;
+    left: 0.938rem;
     color: #717171;
     transform: translateY(-50%);
     pointer-events: none;
@@ -255,7 +261,7 @@ form .input-field label {
 }
 .form-box :where(.forgot-pass, .policy-text) {
     display: inline-flex;
-    margin-top: 14px;
+    margin-top: 0.875rem;
     font-size: 0.95rem;
 
 }
@@ -265,9 +271,9 @@ form button {
     border: none;
     font-size: 1rem;
     font-weight: 600;
-    padding: 14px 0;
-    border-radius: 3px;
-    margin: 25px 0;
+    padding: 0.875rem 0;
+    border-radius: 0.188rem;
+    margin: 1.563rem 0;
     color: #ffffff;
     background: #00bcd4;
     cursor: pointer;
@@ -297,9 +303,9 @@ form button:hover {
 }
 
 .signup .policy-text input {
-    width: 14px;
-    height: 14px;
-    margin-right: 7px;
+    width: 0.875rem;
+    height: 0.875rem;
+    margin-right: 0.438rem;
 }
 
 .menu-wrapper{
@@ -309,9 +315,9 @@ form button:hover {
 }
 .menu-wrapper nav{
     display: flex;
-    max-width: calc(100% - 200px);
-    margin: 0 auto;
-    height: 70px;
+    max-width: calc(100% - 12.5rem);
+    margin: 0 0 0 0;
+    height: 4.375rem;
     align-items: center;
     justify-content: space-between;
 }
@@ -321,7 +327,7 @@ nav .content{
     
 }
 nav .content .links{
-    margin-left: 90px;
+    margin-left: 5.625rem;
     display: flex;
 }
 nav .authentication{
@@ -329,19 +335,19 @@ nav .authentication{
     display: flex;
 }
 .authentication li{
-    margin: 3px;
+    margin: 0.188rem;
 }
 .content .links li{
    list-style: none;
-   line-height: 70px;
-   margin-left: 10px;
+   line-height: 4.375rem;
+   margin-left: 0.625rem;
 }
 .authentication li button{
     color: azure;
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 400;
-    padding: 7px 17px;
-    border-radius: 5px;
+    padding: 0.438rem 10.438rem;
+    border-radius: 0.313rem;
     border-style: none;
  }
 .authentication li #out{
@@ -351,12 +357,12 @@ nav .authentication{
     background-color: rgb(1, 1, 90); 
  }
 .content .links li ul li{
-    margin-left: 0px;
+    margin-left: 0rem;
  }
 
 .content .logo a{
     color: azure;
-    font-size: 25px;
+    font-size: 1.563rem;
     font-weight: 500;
 
 }
@@ -367,10 +373,10 @@ nav .authentication{
 }
 .content .links li a{
     color: azure;
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 400;
-    padding: 7px 17px;
-    border-radius: 5px;
+    padding: 0.438rem 10.438rem;
+    border-radius: 0.313rem;
     transition: all 0.3s ease;
 }
 .content .links li #Advices{
@@ -383,39 +389,40 @@ nav .authentication{
 }
 .menu-wrapper .search-icon{
     color: azure;
-    font-size: 30px;
+    font-size: 1.875rem;
 }
 .menu-wrapper .menu-icon{
     color: azure;
-    font-size: 30px;
+    font-size: 1.875rem;
     display: none;
 }
 
 .filters-wrappers {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin: 20px;
-    margin-top: 40px;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+    margin: 1.25rem;
+    margin-top: 2.5rem;
 
 }
 
 .filters_buttons {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 0.625rem;
 
 
 }
 
 .filters-wrappers button {
-    padding: 10px 20px;
-    font-size: 18px;
+    padding: 0.625rem 1.25rem;
+    font-size: 1.125rem;
     background: rgb(0, 90, 0);
     color: azure;
     border: none;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    border-radius: 6px;
+    box-shadow: 0 0 0.625rem rgba(0,0,0,0.5);
+    border-radius: 0.375rem;
     cursor: pointer;
 }
 
@@ -438,30 +445,31 @@ nav .authentication{
     --lightbshadow: rgba(0,0,0,0.15);
 }
 .advices-wrapper{
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
+    margin-bottom: 0;
     display: flex;
 }
 .advices-wrapper .advices-list{
     background: rgb(209, 243, 234);
-    margin-left: 40px;
+    margin-left: 2.5rem;
     padding: 0;
     display: block;
-    width: 820px;
-    height: 400px;
-    border-radius: 15px;
+    width: 100%;
+    height: 25rem;
+    border-radius: 0.938rem;
     border: #004300 solid;
 
 }
 .wrapper{
     
     overflow: hidden;
-    width: 320px;
-    border-radius: 15px;
-    padding: 25px 30px;
+    width: 30rem;
+    border-radius: 0.938rem;
+    padding: 1.563rem 1.875rem;
     background: #00291d;
     border: #004300 solid;
-    /*box-shadow: 0px 6px 15px var(--lightbshadow);*/
+    /*box-shadow: 0rem 0.375rem 0.938rem var(--lightbshadow);*/
 
 }
 .wrapper i{
@@ -472,27 +480,28 @@ nav .authentication{
     align-items: center;
     justify-content: space-between;
 }
+
 .top-bar i{
-    font-size: 20px;
+    font-size: 1.25rem;
     color: yellow;
 }
 .download{
-    height: 90px;
-    width: 130px;
+    height: 5.625rem;
+    width: 8.125rem;
     position: absolute;
-    left: 220px;
+    left: 21.25rem;
     background: #cecaca;
     z-index: 1;
-    border-radius: 15px;
+    border-radius: 0.938rem;
     align-items: center;
     align-content: center;
     justify-content: center;
-    padding: 0px;
-    opacity: 1;
+    padding: 0rem;
+    opacity: 0;
 }
 .download div{
     list-style: none;
-    padding: 0px;
+    padding: 0rem;
     display: flex;
     justify-content: space-between;
 
@@ -500,57 +509,57 @@ nav .authentication{
 }
 .download div #CO i{
     position: absolute;
-    left: 10px
+    left: 0.625rem
     
 }
 .download div p{
     position: absolute;
-    right: 10px
+    right: 0.625rem
     
 }
 
 .download div:hover{
     background: #7ef47e;
-    padding: 10px;
+    padding: 0.625rem;
 }
 
 .top-bar span{
-    font-size: 16px;
+    font-size: 1rem;
     color: var(--white);
 }
 .img-area{
-    height: 150px;
+    height: 9.375rem;
     width: 100%;
-    margin-top: 5px;
+    margin-top: 0.313rem;
     overflow: hidden;
-    border-radius: 12.5px;
-    border: #aefeae solid 1.3px;
+    border-radius: 0.781rem;
+    border: #aefeae solid 0.081rem;
 }
 .img-area img{
     height: 100%;
     width: 100%;
-    object-fit: cover;
+    object-fit: fill;
 }
 .song-details{
     text-align: center;
-    margin: 5px 0;
-    margin: 10px 0;
+    margin: 0.313rem 0;
+    margin: 0.625rem 0;
     color: var(--white);
 }
 .song-details .name{
-    font-size: 16px;
+    font-size: 1rem;
 
 }
 .song-details .date{
     opacity: 0.9;
-    font-size: 10px;
+    font-size: 0.625rem;
     
 }
 .progress-area{
-    height: 4px;
+    height: 0.25rem;
     width: 100%;
     background: #d2fcbe;
-    border-radius: 25px;
+    border-radius: 1.563rem;
     cursor: pointer;
 }
 .progress-area .progress-bar{
@@ -563,12 +572,12 @@ nav .authentication{
 .progress-bar::before{
     content: "";
     position: absolute;
-    height: 10px;
-    width: 10px;
+    height: 0.625rem;
+    width: 0.625rem;
     background: #000;
     border-radius: inherit;
     top: 25%;
-    right:-4.2px;
+    right:-4.0.125rem;
     transform: translateY(-50%);
     background: inherit;
     opacity: 0;
@@ -578,22 +587,22 @@ nav .authentication{
     opacity: 1;
 }
 .progress-area .timer{
-    margin-top: 2px;
+    margin-top: 0.125rem;
 
 }
 .timer span{
-   font-size: 12px; 
+   font-size: 0.75rem; 
    color: var(--white);
 }
 .controls{
-    margin: 30px 0 5px 0;
+    margin: 1.875rem 0 0.313rem 0;
     background: #aefeae;
-    border-radius: 7.5px;
-    padding: 7px;
+    border-radius: 0.469rem;
+    padding: 0.438rem;
     border: #ffffff solid;
 }
 .controls i{
-    font-size: 24px;
+    font-size: 1.5rem;
     user-select: none;
     background: linear-gradient(90deg, var(--green) 0%, var(--darkgreen) 100%);
     background-clip: text;
@@ -601,23 +610,23 @@ nav .authentication{
     -webkit-text-fill-color: transparent;
 }
 .controls i:nth-child(2), .controls i:nth-child(4){
-    font-size: 24px;
+    font-size: 1.5rem;
 }
 .controls #prev{
-    margin-right: -13px;
+    margin-right: -0.813rem;
 }
 .controls #next{
-    margin-left: -11px;
+    margin-left: -0.688rem;
 }
 
 .controls #next:hover{
-    margin-left: -11px;  
+    margin-left: -0.688rem;  
 }
 .controls .play-pause{
-    height: 45px;
-    width: 45px;
+    height: 2.813rem;
+    width: 2.813rem;
     background: linear-gradient(90deg, var(--white) 0%, var(--darkwhite) 100%);
-    box-shadow: 0px 0px 5px var(--green);
+    box-shadow: 0rem 0rem 0.313rem var(--green);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -627,14 +636,14 @@ nav .authentication{
     content: "";
     position: absolute;
     border-radius: inherit;
-    height: 36px;
-    width: 36px;
+    height: 2.25rem;
+    width: 2.25rem;
     background: linear-gradient(90deg, var(--green) 0%, var(--darkgreen) 100%);
 }
 .play-pause i{
-    height: 21.5px;
-    width: 36px;
-    line-height: 21.5px;
+    height: 1.344rem;
+    width: 2.25rem;
+    line-height: 1.344rem;
     text-align: center;
     border-radius: inherit;
     background: inherit;
@@ -644,15 +653,15 @@ nav .authentication{
     -webkit-text-fill-color: transparent;
 }
 .music-list{
-    position: absolute;
+    position: fixed;
     left: 0;
     bottom: 0%;
     opacity: 0;
     pointer-events: none;
     width: 100%;
-    padding: 15px 30px;
-    border-radius: 15px;
-    box-shadow: 0px -5px 10px rgba(0,0,0,0.1);
+    padding: 0.938rem 1.875rem;
+    border-radius: 0.938rem;
+    box-shadow: 0rem -0.313rem 0.625rem rgba(0,0,0,0.1);
     background: var(--white);
     transition: all 0.2s ease-out;
     z-index: 1;
@@ -664,9 +673,9 @@ nav .authentication{
     opacity: 1;
     pointer-events: auto;
     width: 100%;
-    padding: 15px 30px;
-    border-radius: 15px;
-    box-shadow: 0px -5px 10px rgba(0,0,0,0.1);
+    padding: 0.938rem 1.875rem;
+    border-radius: 0.938rem;
+    box-shadow: 0rem -0.313rem 0.625rem rgba(0,0,0,0.1);
     background: var(--white);
     transition: all 0.2s ease-out;
 }
@@ -679,17 +688,17 @@ nav .authentication{
 .music-list .header .row{
     display: flex;
     align-items: center;
-    font-size: 19px;
+    font-size: 1.188rem;
     color: var(--lightblack);
 
 }
 .advices-list .header .row{
     display: flex;
     align-items: center;
-    font-size: 19px;
-    padding: 15px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    font-size: 1.188rem;
+    padding: 0.938rem;
+    border-top-left-radius: 0.625rem;
+    border-top-right-radius: 0.625rem;
     margin: 0;
     color: aliceblue;
     background: #004300;
@@ -704,31 +713,31 @@ nav .authentication{
 
 }
 .music-list .header .row span{
-    margin-left: 5px;
+    margin-left: 0.313rem;
 }
 .advices-list .header .row span{
-    margin-left: 5px;
+    margin-left: 0.313rem;
 }
 .music-list .header #close{
-    font-size: 22px;
-    padding: 5px;
+    font-size: 1.375rem;
+    padding: 0.313rem;
     color: var(--lightblack);
     
 }
 .music-list .header #close:hover{
-    font-size: 22px;
+    font-size: 1.375rem;
     background-color: rgb(195, 250, 195);
     border-radius: 50%;
 }
 .music-list ul{
-    margin: 10px 0;
-    max-height: 260px;
+    margin: 0.625rem 0;
+    max-height: 16.25rem;
     overflow-y: scroll;
 
 }
 .advices-list ul{
-    margin: 10px 0;
-    max-height: 320px;
+    margin: 0.625rem 0;
+    max-height: 20rem;
     overflow-y: scroll;
     
 }
@@ -736,47 +745,50 @@ nav .authentication{
    width: none;
 }
 .advices-list ul::-webkit-scrollbar{
-    width: 25px;
+    width: 1.563rem;
  }
  .advices-list ul::-webkit-scrollbar-track{
     background: #7ef4de;
-    margin-bottom: 5px;
+    margin-bottom: 0.313rem;
  }
  .advices-list ul::-webkit-scrollbar-thumb{
     background: linear-gradient(90deg, rgb(0, 68, 74) 0%, var(--darkgreen) 100%);
-    border-radius: 10px;
-    height: 0px;
+    border-radius: 0.625rem;
+    height: 0rem;
     
  }
 .music-list ul li{
     cursor: pointer;
     list-style: none;
-    padding-bottom: 10px;
-    margin-bottom: 5px;
+    padding-bottom: 0.625rem;
+    margin-bottom: 0.313rem;
     color: var(--lightblack);
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 0.063rem solid #e5e5e5;
 }
 .advices-list ul li{
     cursor: pointer;
     display: flex;
     align-items: center;
     list-style: none;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-    padding: 10px;
+    padding-bottom: 0.625rem;
+    margin-bottom: 0.625rem;
+    padding: 0.625rem;
     justify-content: space-between;
-    margin-left: 10px;
-    margin-right: 5px;
-    border-radius: 5px;
+    margin-left: 0.625rem;
+    margin-right: 0.313rem;
+    border-radius: 0.313rem;
     background: rgba(0, 37, 32, 0.986);
     color: var(--white);
-    border-bottom: 1px solid rgb(0, 37, 0);
-    border-top: 1px solid rgb(0, 37, 0);
-    border-left: 1px solid rgb(0, 37, 0);
-    border-right: 1px solid rgb(0, 37, 0);
+    border-bottom: 0.063rem solid rgb(0, 37, 0);
+    border-top: 0.063rem solid rgb(0, 37, 0);
+    border-left: 0.063rem solid rgb(0, 37, 0);
+    border-right: 0.063rem solid rgb(0, 37, 0);
 }
 
 .advices-list ul .advice.hidden-text1 {
+    display: none;
+}
+.music-list ul .advice.hidden-text1 {
     display: none;
 }
 
@@ -789,29 +801,32 @@ nav .authentication{
 .advices-list ul .advice.hide {
     display: none;
 }
+.music-list ul .advice.hide {
+    display: none;
+}
 .music-list ul li:last-child{
-    border-bottom: 0px;
+    border-bottom: 0rem;
 }
 .advices-list ul li:last-child{
-    border-bottom: 0px;
+    border-bottom: 0rem;
 }
 .music-list ul li .row span{
-    font-size: 17px;
+    font-size: 1.063rem;
 }
 .advices-list ul li .row span{
-    font-size: 17px;
+    font-size: 1.063rem;
 }
 
 .music-list ul li:hover{
     background: #c4fac4;
-    border-radius: 10px;
-    padding: 5px;
+    border-radius: 0.625rem;
+    padding: 0.313rem;
 }
 .advices-list ul li:hover{
     background: #f1fbf1;
-    border-radius: 10px;
+    border-radius: 0.625rem;
     font-weight: 600;
-    padding: 5px;
+    padding: 0.313rem;
     color: rgba(0, 37, 32, 0.986);
     border: solid rgba(0, 37, 32, 0.986);
 }
@@ -823,11 +838,11 @@ nav .authentication{
     opacity: 0.9;
 }
 .music-list ul li .audio-duration{
-    font-size: 16px;
+    font-size: 1rem;
 
 }
 .advices-list ul li .audio-duration{
-    font-size: 16px;
+    font-size: 1rem;
 
 }
 
@@ -845,14 +860,14 @@ nav .authentication{
 .content .links ul{
     position: absolute;
     background: rgb(0, 37, 0);
-    top: 80px;
+    top: 5rem;
     z-index: 1;
-    padding: 0px;
+    padding: 0rem;
     opacity: 0;
     visibility: hidden;
 }
 .content .links li:hover ul{
-    top: 70px;
+    top: 4.375rem;
     opacity: 1;
     visibility: visible;
     transition: all 0.3s ease;
@@ -860,8 +875,8 @@ nav .authentication{
 .content .links ul li a{
     display: block;
     width: 100%;
-    line-height: 30px;
-    border-radius: 0px!important;
+    line-height: 1.875rem;
+    border-radius: 0rem!important;
 }
 
 
@@ -869,41 +884,46 @@ nav .authentication{
 
 
 /* Responsive code start */
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 78.125rem) {
   .menu-wrapper nav{
     max-width: 100%;
-    padding: 0 20px;
+    padding: 0 1.25rem;
   }
   nav .content .links{
-    margin-left: 30px;
+    margin-left: 1.875rem;
 } 
 nav .content .links li a{
-    padding: 8px 13px;
+    padding: 0.5rem 0.813rem;
     
 } 
+body{
+    background-color: white;
+    align-items: center;
+    width: 100%;
 }
-@media screen and (max-width: 900px) {
+}
+@media screen and (max-width: 56.75rem) {
     nav .content .links{
       display: block;
       position: fixed;
       background: rgb(0, 31, 0);
       height: 100%;
       width: 100%;
-      top: 70px;
+      top: 4.375rem;
       left: -100%;
       margin-left: 0;
-      max-width: 350px;
+      max-width: 21.875rem;
       overflow-y: auto;
       transition: all 0.3s ease;
   } 
     .content .links li{
-      margin: 15px 20px;      
+      margin: 0.938rem 1.25rem;      
   }
     .content .links li a{
-    line-height: 40px; 
-    font-size: 20px;
+    line-height: 2.5rem; 
+    font-size: 1.25rem;
     display: block; 
-    padding: 8px 18px;    
+    padding: 0.5rem 1.125rem;    
 } 
     .menu-wrapper .menu-icon{
     display: block;
@@ -917,18 +937,45 @@ nav .content .links li a{
     background: none;
 }
 .content .links ul li{
-    margin: 7px 20px;
+    margin: 0.438rem 1.25rem;
 }
 .content .links ul li a{
-    font-size: 18px;
-    line-height: 30px;
-    border-radius: 5px!important;
+    font-size: 1.125rem;
+    line-height: 1.875rem;
+    border-radius: 0.313rem!important;
 
+}
+.advices-wrapper .advices-list {
+    display: none;
+}
+.wrapper {
+    align-items: center;
+    
+    
+}
+.advices-wrapper{
+    align-items: center;
+    justify-content: center;
+}
+
+.filters-wrappers {
+    align-items: center;
+    justify-content: center;
+}
+.wrapper{
+
+    width: 30rem;
+
+}
+body{
+    background-color: white;
+    align-items: center;
+    width: 100%;
 }
 
   }
 
-@media (max-width: 760px ) {
+@media (max-width: 47.5rem ) {
     .form-popup {
         width: 95%;
     }
@@ -936,6 +983,11 @@ nav .content .links li a{
         display: none;
     }
     .form-box .form-content {
-        padding: 30px 20px;
+        padding: 1.875rem 1.25rem;
+    }
+    body{
+        background-color: white;
+        align-items: center;
+        width: 100%;
     }
 }  

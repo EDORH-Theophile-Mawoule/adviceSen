@@ -32,6 +32,7 @@ window.addEventListener("load", ()=>{
     // Select all filter buttons and filterable advices list
     const filterButtons = document.querySelectorAll(".filters-wrappers button");
     const filterableAdviceList = document.querySelectorAll(".advices-wrapper .advices-list ul .advice");
+    const filterableAdviceListSecond = document.querySelectorAll(".advices-wrapper .wrapper .music-list ul .advice");
     //console.log(filterButtons, filterableAdviceList)
 
 // Define filter list
@@ -51,7 +52,15 @@ window.addEventListener("load", ()=>{
                 advice.classList.remove("hide");
             } 
         })
-        
+        filterableAdviceListSecond.forEach(advice => {
+            // Add "hide" class to hide the class initialy
+            advice.classList.add("hide")
+            
+            // Check if the advice matches the selected filter or "all" is selected
+            if (advice.dataset.name === e.target.dataset.name || e.target.dataset.name === "all") {
+                advice.classList.remove("hide");
+            } 
+        })
         
     }
 
@@ -63,6 +72,7 @@ window.addEventListener("load", ()=>{
 // Select all filter buttons and filterable advices list
 //const filterButtons1 = document.querySelectorAll(".filters-wrappers button");
     const filterableAdviceList1 = document.querySelectorAll(".advices-wrapper .advices-list ul .advice");
+    const filterableAdviceList2 = document.querySelectorAll(".advices-wrapper .wrapper .music-list ul .advice");
     var month = "";
     var year = "";
     var zone = "";
@@ -98,8 +108,23 @@ window.addEventListener("load", ()=>{
                         }
                         //console.log(advice.attributes[3].value, advice.attributes[4].value)
                     });
+                    filterableAdviceList2.forEach(advice => {
+                        advice.classList.add("hidden-text1")
+                        if (advice.attributes[2].value==month) {
+                            advice.classList.remove("hidden-text1")
+                        }
+                        //console.log(advice.attributes[3].value, advice.attributes[4].value)
+                    });
                 } else if (month == option.innerText && zone !== "" && year == "") {
                     filterableAdviceList1.forEach(advice => {
+                        advice.classList.add("hidden-text1")
+                        console.log("It is happening here");
+                        if (advice.attributes[2].value==month && advice.attributes[4].value==zone && year == "") {
+                            advice.classList.remove("hidden-text1")
+                        }
+                        //console.log(advice.attributes[3].value, advice.attributes[4].value)
+                    });
+                    filterableAdviceList2.forEach(advice => {
                         advice.classList.add("hidden-text1")
                         console.log("It is happening here");
                         if (advice.attributes[2].value==month && advice.attributes[4].value==zone && year == "") {
@@ -116,8 +141,22 @@ window.addEventListener("load", ()=>{
                         }
                         //console.log(advice.attributes[3].value, advice.attributes[4].value)
                     });
+                    filterableAdviceList2.forEach(advice => {
+                        advice.classList.add("hidden-text1")
+                        console.log("It is happening here");
+                        if (advice.attributes[2].value==month && advice.attributes[3].value==year && zone == "") {
+                            advice.classList.remove("hidden-text1")
+                        }
+                        //console.log(advice.attributes[3].value, advice.attributes[4].value)
+                    });
                 } else if (month == option.innerText && zone !== "" && year !== "") {
                     filterableAdviceList1.forEach(advice => {
+                        advice.classList.add("hidden-text1")
+                        if (advice.attributes[2].value==month && advice.attributes[3].value==year && advice.attributes[4].value==zone) {
+                            advice.classList.remove("hidden-text1")
+                        }
+                    });
+                    filterableAdviceList2.forEach(advice => {
                         advice.classList.add("hidden-text1")
                         if (advice.attributes[2].value==month && advice.attributes[3].value==year && advice.attributes[4].value==zone) {
                             advice.classList.remove("hidden-text1")
@@ -188,8 +227,22 @@ window.addEventListener("load", ()=>{
                         }
                         //console.log(advice.attributes[3].value, advice.attributes[4].value)
                     });
+                    filterableAdviceList2.forEach(advice => {
+                        advice.classList.add("hidden-text1")
+                        if (advice.attributes[3].value==year) {
+                            advice.classList.remove("hidden-text1")
+                        }
+                        //console.log(advice.attributes[3].value, advice.attributes[4].value)
+                    });
                 } else if (year == option.innerText && zone !== "" && month == "") {
                     filterableAdviceList1.forEach(advice => {
+                        advice.classList.add("hidden-text1")
+                        if (advice.attributes[3].value==year && advice.attributes[4].value==zone && month == "") {
+                            advice.classList.remove("hidden-text1")
+                        }
+                        //console.log(advice.attributes[3].value, advice.attributes[4].value)
+                    });
+                    filterableAdviceList2.forEach(advice => {
                         advice.classList.add("hidden-text1")
                         if (advice.attributes[3].value==year && advice.attributes[4].value==zone && month == "") {
                             advice.classList.remove("hidden-text1")
@@ -204,8 +257,21 @@ window.addEventListener("load", ()=>{
                         }
                         //console.log(advice.attributes[3].value, advice.attributes[4].value)
                     });
+                    filterableAdviceList2.forEach(advice => {
+                        advice.classList.add("hidden-text1")
+                        if (advice.attributes[3].value==year && advice.attributes[2].value==month && zone == "") {
+                            advice.classList.remove("hidden-text1")
+                        }
+                        //console.log(advice.attributes[3].value, advice.attributes[4].value)
+                    });
                 } else if (year == option.innerText && zone !== "" && month !== "") {
                     filterableAdviceList1.forEach(advice => {
+                        advice.classList.add("hidden-text1")
+                        if (advice.attributes[2].value==month && advice.attributes[3].value==year && advice.attributes[4].value==zone) {
+                            advice.classList.remove("hidden-text1")
+                        }
+                    });
+                    filterableAdviceList2.forEach(advice => {
                         advice.classList.add("hidden-text1")
                         if (advice.attributes[2].value==month && advice.attributes[3].value==year && advice.attributes[4].value==zone) {
                             advice.classList.remove("hidden-text1")
@@ -275,8 +341,22 @@ window.addEventListener("load", ()=>{
                         }
                         //console.log(advice.attributes[3].value, advice.attributes[4].value)
                     });
+                    filterableAdviceList2.forEach(advice => {
+                        advice.classList.add("hidden-text1")
+                        if ( advice.attributes[4].value==zone) {
+                            advice.classList.remove("hidden-text1")
+                        }
+                        //console.log(advice.attributes[3].value, advice.attributes[4].value)
+                    });
                 } else if (zone == option.innerText && year !== "" && month == "") {
                     filterableAdviceList1.forEach(advice => {
+                        advice.classList.add("hidden-text1")
+                        if (advice.attributes[4].value==zone && advice.attributes[3].value==year && month == "") {
+                            advice.classList.remove("hidden-text1")
+                        }
+                        //console.log(advice.attributes[3].value, advice.attributes[4].value)
+                    });
+                    filterableAdviceList2.forEach(advice => {
                         advice.classList.add("hidden-text1")
                         if (advice.attributes[4].value==zone && advice.attributes[3].value==year && month == "") {
                             advice.classList.remove("hidden-text1")
@@ -291,8 +371,21 @@ window.addEventListener("load", ()=>{
                         }
                         //console.log(advice.attributes[3].value, advice.attributes[4].value)
                     });
+                    filterableAdviceList2.forEach(advice => {
+                        advice.classList.add("hidden-text1")
+                        if (advice.attributes[4].value == zone && year == "" && advice.attributes[2].value==month) {
+                            advice.classList.remove("hidden-text1")
+                        }
+                        //console.log(advice.attributes[3].value, advice.attributes[4].value)
+                    });
                 } else if (zone == option.innerText && year !== "" && month !== "") {
                     filterableAdviceList1.forEach(advice => {
+                        advice.classList.add("hidden-text1")
+                        if (advice.attributes[2].value==month && advice.attributes[3].value==year && advice.attributes[4].value==zone) {
+                            advice.classList.remove("hidden-text1")
+                        }
+                    });
+                    filterableAdviceList2.forEach(advice => {
                         advice.classList.add("hidden-text1")
                         if (advice.attributes[2].value==month && advice.attributes[3].value==year && advice.attributes[4].value==zone) {
                             advice.classList.remove("hidden-text1")
@@ -339,8 +432,8 @@ window.addEventListener("load", ()=>{
 // load music function
 function loadMusic(indexNumb) {
     musicName.innerHTML = allMusic[indexNumb-1].name;
-    musicDate.innerHTML = allMusic[indexNumb-1].date;
-    musicImg.src = `images/${allMusic[indexNumb-1].img}.jpeg`;
+    musicDate.innerHTML = allMusic[indexNumb-1].month + allMusic[indexNumb-1].year + ": "+ allMusic[indexNumb-1].semaine;
+    musicImg.src = `images/music-1.jpeg`;
     mainAudio.src = `songs/${allMusic[indexNumb-1].src}.mp3`;
 }
 
@@ -489,13 +582,14 @@ hideMusicBtn.addEventListener("click", ()=>{
 const ulTag = wrapper.querySelector(".music-list ul");
 const ulTag1 = advicesWrapper.querySelector(".advices-list ul");
 
+
 // let's create li according to the array length
 for (let i = 0; i < allMusic.length; i++){
     // let's pass the song name, artist from the array to li
-    let liTag = `<li li-index="${i+1}" class = "advice" month = "${allMusic[i].month}" year = "${allMusic[i].year}" zone = "${allMusic[i].zone}" data-name = "${allMusic[i].type}">
+    let liTag = `<li li-index="${i+1}" class = "advice" month = "${allMusic[i].month}" year = "${allMusic[i].semaine}" zone = "${allMusic[i].zone}" data-name = "${allMusic[i].type}">
                     <div class="row">
                         <span>${allMusic[i].name}</span>
-                        <p>${allMusic[i].month} ${allMusic[i].year} </p>
+                        <p>${allMusic[i].month} ${allMusic[i].year}: ${allMusic[i].semaine} </p>
                     </div>
                     <audio class="${allMusic[i].src}" src="songs/${allMusic[i].src}.mp3"></audio> 
                     <span id="${allMusic[i].src}" class="audio-duration"></span>
@@ -537,6 +631,7 @@ for (let i = 0; i < allMusic.length; i++){
 //let's add onclick attribute in all li
 const allLitags = ulTag.querySelectorAll("li");
 const allLitags1 = ulTag1.querySelectorAll("li");
+const downloadMusic = document.querySelector(".advices-wrapper .wrapper .top-bar")
 function playingNow() {
     for (let j = 0; j < allLitags.length; j++) {
         let audioTag = allLitags[j].querySelector(".audio-duration");
@@ -548,12 +643,27 @@ function playingNow() {
             console.log(adDuration);
             
             audioTag.innerText = adDuration;
+                               
+
         }
         // if there is an li tag which li-index is equal to music index
         //then this music is playing now
         if(allLitags[j].getAttribute("li-index") == musicIndex){
             allLitags[j].classList.add("playing");
-            audioTag.innerHTML = "playing";  
+            audioTag.innerHTML = "playing";
+            let downloadMusicTag = `<a href="songs/music00${musicIndex}.mp3" download>
+                                    <div  id="co">
+                                        <i class="material-icons">picture_as_pdf</i>
+                                        <p>pdf</p>
+                                    </div>
+                                </a>`;
+            let downloadMusicTag1 = `<a href="songs/music00${musicIndex}.mp3" download>
+                                        <span>Télécharger le conseil</span>
+                                        <i class="material-icons">download</i>
+                                    </a>`;                    
+
+            downloadMusic.innerHTML = downloadMusicTag1;
+
         }
         // adding onclick attribute in all li tags
         allLitags[j].setAttribute("onclick", "clicked(this)")
